@@ -1,0 +1,40 @@
+# docker compose build
+# docker compose up
+
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: inf-system-postgres
+    environment:
+      POSTGRES_DB: inf-system-db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U demo -d demo"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    container_name: demo-app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: demo
+      DB_USER: demo
+      DB_PASSWORD: demo
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:
