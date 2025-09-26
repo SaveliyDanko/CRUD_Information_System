@@ -2,8 +2,8 @@ package com.savadanko.controller;
 
 import com.savadanko.domain.dto.PersonDTO;
 import com.savadanko.domain.dto.PersonFullDTO;
-import com.savadanko.domain.requests.CreatePersonRequest;
-import com.savadanko.domain.requests.UpdatePersonRequest;
+import com.savadanko.domain.request.CreatePersonRequest;
+import com.savadanko.domain.request.UpdatePersonRequest;
 import com.savadanko.service.PersonService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;

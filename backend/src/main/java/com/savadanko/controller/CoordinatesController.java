@@ -1,8 +1,8 @@
 package com.savadanko.controller;
 
 import com.savadanko.domain.dto.CoordinatesDTO;
-import com.savadanko.domain.requests.CreateCoordinatesRequest;
-import com.savadanko.domain.requests.UpdateCoordinatesRequest;
+import com.savadanko.domain.request.CreateCoordinatesRequest;
+import com.savadanko.domain.request.UpdateCoordinatesRequest;
 import com.savadanko.service.CoordinatesService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
