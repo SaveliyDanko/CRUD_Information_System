@@ -23,7 +23,7 @@ services:
 
   app:
     build: .
-    container_name: demo-app
+    container_name: inf-system-app
     depends_on:
       db:
         condition: service_healthy
