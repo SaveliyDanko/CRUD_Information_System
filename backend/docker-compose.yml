@@ -16,7 +16,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U demo -d demo"]
+      test: ["CMD-SHELL", "pg_isready -U user -d inf-system-db"]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -30,9 +30,9 @@ services:
     environment:
       DB_HOST: db
       DB_PORT: "5432"
-      DB_NAME: demo
-      DB_USER: demo
-      DB_PASSWORD: demo
+      DB_NAME: inf-system-db
+      DB_USER: user
+      DB_PASSWORD: password
     ports:
       - "8080:8080"
 
