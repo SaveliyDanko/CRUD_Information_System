@@ -1,0 +1,45 @@
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: left;
+  border: 1px solid var(--color-border);
+}
+
+.title {
+  margin: 0 0 1rem 0;
+  color: var(--color-text-dim);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.input {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.6em 1.2em;
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.result {
+  background-color: var(--color-bg);
+  padding: 0.6em 1.2em;
+  border-radius: var(--border-radius);
+  font-family: monospace;
+  word-break: break-all;
+  flex-grow: 1;
+  width: 100%;
+  margin-top: 1rem;
+  white-space: pre-wrap;
+}
+
+.result span {
+  color: var(--color-text-dim);
+}

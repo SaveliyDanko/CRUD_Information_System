@@ -1,0 +1,11 @@
+.page {
+  text-align: left;
+}
+.title {
+  margin-top: 0;
+}
+.functionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
