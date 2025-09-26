@@ -7,7 +7,6 @@ import com.savadanko.domain.dto.PersonDTO;
 import com.savadanko.domain.dto.PersonFullDTO;
 import com.savadanko.domain.requests.CreatePersonRequest;
 import com.savadanko.domain.requests.UpdatePersonRequest;
-import com.savadanko.exceptions.ConflictException;
 import com.savadanko.repository.LabWorkRepository;
 import com.savadanko.repository.LocationRepository;
 import com.savadanko.repository.PersonRepository;

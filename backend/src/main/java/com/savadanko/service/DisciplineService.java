@@ -4,7 +4,6 @@ import com.savadanko.domain.Discipline;
 import com.savadanko.domain.requests.CreateDisciplineRequest;
 import com.savadanko.domain.dto.DisciplineDTO;
 import com.savadanko.domain.requests.UpdateDisciplineRequest;
-import com.savadanko.exceptions.ConflictException;
 import com.savadanko.repository.DisciplineRepository;
 import com.savadanko.exceptions.NotFoundException;
 import com.savadanko.repository.LabWorkRepository;

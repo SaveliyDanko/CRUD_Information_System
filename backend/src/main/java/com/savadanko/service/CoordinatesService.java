@@ -2,8 +2,8 @@ package com.savadanko.service;
 
 import com.savadanko.domain.Coordinates;
 import com.savadanko.domain.dto.CoordinatesDTO;
-import com.savadanko.domain.requests.CreateCoordinatesRequest;
-import com.savadanko.domain.requests.UpdateCoordinatesRequest;
+import com.savadanko.domain.request.CreateCoordinatesRequest;
+import com.savadanko.domain.request.UpdateCoordinatesRequest;
 import com.savadanko.exceptions.ConflictException;
 import com.savadanko.exceptions.NotFoundException;
 import com.savadanko.repository.CoordinatesRepository;

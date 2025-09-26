@@ -4,7 +4,6 @@ import com.savadanko.domain.Location;
 import com.savadanko.domain.requests.CreateLocationRequest;
 import com.savadanko.domain.dto.LocationDTO;
 import com.savadanko.domain.requests.UpdateLocationRequest;
-import com.savadanko.exceptions.ConflictException;
 import com.savadanko.repository.LocationRepository;
 import com.savadanko.exceptions.NotFoundException;
 import com.savadanko.repository.PersonRepository;
