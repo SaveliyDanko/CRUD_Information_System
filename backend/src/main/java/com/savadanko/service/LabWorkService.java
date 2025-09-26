@@ -2,8 +2,8 @@ package com.savadanko.service;
 
 import com.savadanko.domain.*;
 import com.savadanko.domain.dto.*;
-import com.savadanko.domain.requests.CreateLabWorkRequest;
-import com.savadanko.domain.requests.UpdateLabWorkRequest;
+import com.savadanko.domain.request.CreateLabWorkRequest;
+import com.savadanko.domain.request.UpdateLabWorkRequest;
 import com.savadanko.exceptions.NotFoundException;
 import com.savadanko.repository.*;
 import org.springframework.data.domain.PageRequest;
