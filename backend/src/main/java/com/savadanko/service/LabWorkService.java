@@ -143,7 +143,6 @@ public class LabWorkService {
     }
 
     private Difficulty decreaseEnum(Difficulty d, int steps) {
-        // hardest->easiest: HOPELESS(3), INSANE(2), EASY(1), VERY_EASY(0)
         java.util.List<Difficulty> order = java.util.List.of(
                 Difficulty.VERY_EASY, Difficulty.EASY, Difficulty.INSANE, Difficulty.HOPELESS
         );
@@ -158,7 +157,6 @@ public class LabWorkService {
                 .orElseThrow(() -> new NotFoundException("Discipline not found"));
         var top10 = labWorkRepo.findHardest(PageRequest.of(0, 10));
         top10.forEach(l -> l.setDiscipline(disc));
-        // persist через dirty checking
         return top10.stream().map(this::toDto).toList();
     }
 
