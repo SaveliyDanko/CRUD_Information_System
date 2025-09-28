@@ -26,7 +26,7 @@ public interface LabWorkRepository extends JpaRepository<LabWork, Long> {
 
     @Query("""
        select l from LabWork l
-       order by 
+       order by\s
          case l.difficulty
            when com.savadanko.domain.Difficulty.HOPELESS then 4
            when com.savadanko.domain.Difficulty.INSANE   then 3
@@ -34,6 +34,6 @@ public interface LabWorkRepository extends JpaRepository<LabWork, Long> {
            when com.savadanko.domain.Difficulty.VERY_EASY then 1
          end desc,
          l.minimalPoint desc, l.id desc
-       """)
+      \s""")
     List<LabWork> findHardest(Pageable pageable);
 }
