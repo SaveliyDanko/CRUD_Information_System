@@ -1,8 +1,8 @@
 BEGIN;
 
 INSERT INTO coordinates (id, x, y) VALUES
-  (1, 12.34, 56.7),
-  (2, 98.76, 10.0),
+  (1, 2, 3),
+  (2, 56.43, 10.7),
   (3, 0.01,  250.5)
 ON CONFLICT (id) DO NOTHING;
 
@@ -14,7 +14,7 @@ ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO person (id, name, eye_color, hair_color, location_id, weight, nationality) VALUES
   (1, 'Alice',  'GREEN', 'BROWN', 1, 55.0, 'GERMANY'),
-  (2, 'Bob',    NULL,    'RED',   2, 82.5, NULL),
+  (2, 'Bob',    BROWN,    'RED',   2, 82.5, 'UNITED_KINGDOM'),
   (3, 'Chandra','WHITE', 'WHITE', 3, 68.2, 'INDIA')
 ON CONFLICT (id) DO NOTHING;
 
@@ -27,10 +27,10 @@ ON CONFLICT (id) DO NOTHING;
 INSERT INTO lab_work
   (id, name, coordinates_id, creation_date, description, difficulty, discipline_id, minimal_point, author_id)
 VALUES
-  (1, 'Vectors 101', 1, NOW(), 'Введение в работу с векторами', 'EASY', 1, 10, 1),
-  (2, 'OS Schedulers', 2, NOW(), 'Эксперименты с планировщиками ОС', 'VERY_EASY', 2, 20, 2),
-  (3, 'Kafka Stream Join', 3, NOW(), 'Практика по потоковым join в Kafka Streams', 'INSANE', 3, 50, 3),
-  (4, 'Null Discipline', 1, NOW(), NULL, 'HOPELESS', NULL, 5, NULL)
+  (1, 'Vectors', 1, NOW(), 'Introduction to Vectors', 'EASY', 1, 10, 1),
+  (2, 'OS Schedulers', 2, NOW(), 'OS shedulers introduction', 'VERY_EASY', 2, 20, 2),
+  (3, 'Kafka Stream Join', 3, NOW(), 'Kafka Streams', 'INSANE', 3, 50, 3),
+  (4, 'Math Discipline', 1, NOW(), 'Introduction to Calculus', 'HOPELESS', '5', 5, '1')
 ON CONFLICT (id) DO NOTHING;
 
 COMMIT;
