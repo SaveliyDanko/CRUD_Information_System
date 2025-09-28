@@ -30,7 +30,7 @@ VALUES
   (1, 'Vectors 101', 1, NOW(), 'Введение в работу с векторами', 'EASY', 1, 10, 1),
   (2, 'OS Schedulers', 2, NOW(), 'Эксперименты с планировщиками ОС', 'VERY_EASY', 2, 20, 2),
   (3, 'Kafka Stream Join', 3, NOW(), 'Практика по потоковым join в Kafka Streams', 'INSANE', 3, 50, 3),
-  (4, 'Null Discipline/Author Demo', 1, NOW(), NULL, 'HOPELESS', NULL, 5, NULL)
+  (4, 'Null Discipline', 1, NOW(), NULL, 'HOPELESS', NULL, 5, NULL)
 ON CONFLICT (id) DO NOTHING;
 
 COMMIT;
