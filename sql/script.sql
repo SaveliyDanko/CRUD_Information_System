@@ -14,7 +14,7 @@ ON CONFLICT (id) DO NOTHING;
 
 INSERT INTO person (id, name, eye_color, hair_color, location_id, weight, nationality) VALUES
   (1, 'Alice',  'GREEN', 'BROWN', 1, 55.0, 'GERMANY'),
-  (2, 'Bob',    BROWN,    'RED',   2, 82.5, 'UNITED_KINGDOM'),
+  (2, 'Bob',    'BROWN',    'RED',   2, 82.5, 'UNITED_KINGDOM'),
   (3, 'Chandra','WHITE', 'WHITE', 3, 68.2, 'INDIA')
 ON CONFLICT (id) DO NOTHING;
 
@@ -30,7 +30,7 @@ VALUES
   (1, 'Vectors', 1, NOW(), 'Introduction to Vectors', 'EASY', 1, 10, 1),
   (2, 'OS Schedulers', 2, NOW(), 'OS shedulers introduction', 'VERY_EASY', 2, 20, 2),
   (3, 'Kafka Stream Join', 3, NOW(), 'Kafka Streams', 'INSANE', 3, 50, 3),
-  (4, 'Math Discipline', 1, NOW(), 'Introduction to Calculus', 'HOPELESS', '5', 5, '1')
+  (4, 'Math Discipline', 1, NOW(), 'Introduction to Calculus', 'HOPELESS', '1', 5, '1')
 ON CONFLICT (id) DO NOTHING;
 
 COMMIT;
