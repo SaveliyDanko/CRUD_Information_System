@@ -1,4 +1,5 @@
-import styles from './ContextMenu.module.css';
+import { useEffect, useRef } from "react";
+import styles from "./ContextMenu.module.css";
 
 interface ContextMenuProps {
   x: number;
@@ -11,8 +12,45 @@ interface ContextMenuProps {
 }
 
 export const ContextMenu = ({ x, y, onClose, onFilter, onRead, onUpdate, onDelete }: ContextMenuProps) => {
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+
+    // pointerdown срабатывает раньше, чем focus/blur — меньше миганий
+    document.addEventListener("pointerdown", onPointerDown, true);
+    document.addEventListener("keydown", onKeyDown, true);
+
+    // опционально закрываем при скролле/resize
+    const onAnyScroll = () => onClose();
+    window.addEventListener("resize", onAnyScroll);
+    document.addEventListener("scroll", onAnyScroll, true);
+
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown, true);
+      document.removeEventListener("keydown", onKeyDown, true);
+      window.removeEventListener("resize", onAnyScroll);
+      document.removeEventListener("scroll", onAnyScroll, true);
+    };
+  }, [onClose]);
+
+  // Чтобы клики внутри не «пробивали» вверх (на всякий случай)
+  const stop = (e: React.MouseEvent) => e.stopPropagation();
+
   return (
-    <div className={styles.menu} style={{ top: y, left: x }}>
+    <div
+      ref={menuRef}
+      className={styles.menu}
+      style={{ top: y, left: x, position: "absolute" }}
+      onClick={stop}
+    >
       <button onClick={onFilter} className={styles.menuItem}>Filter</button>
       <button onClick={onRead} className={styles.menuItem}>Read</button>
       <button onClick={onUpdate} className={styles.menuItem}>Update</button>
