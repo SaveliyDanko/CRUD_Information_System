@@ -24,11 +24,9 @@ export const ContextMenu = ({ x, y, onClose, onFilter, onRead, onUpdate, onDelet
       if (e.key === "Escape") onClose();
     };
 
-    // pointerdown срабатывает раньше, чем focus/blur — меньше миганий
     document.addEventListener("pointerdown", onPointerDown, true);
     document.addEventListener("keydown", onKeyDown, true);
 
-    // опционально закрываем при скролле/resize
     const onAnyScroll = () => onClose();
     window.addEventListener("resize", onAnyScroll);
     document.addEventListener("scroll", onAnyScroll, true);
@@ -41,7 +39,6 @@ export const ContextMenu = ({ x, y, onClose, onFilter, onRead, onUpdate, onDelet
     };
   }, [onClose]);
 
-  // Чтобы клики внутри не «пробивали» вверх (на всякий случай)
   const stop = (e: React.MouseEvent) => e.stopPropagation();
 
   return (
