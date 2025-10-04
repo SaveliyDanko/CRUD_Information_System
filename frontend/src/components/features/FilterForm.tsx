@@ -6,7 +6,7 @@ import { ColumnDef } from '../ui/Table';
 interface FilterFormProps {
   onClose: () => void;
   columns: ColumnDef<any>[];
-  onSubmit: (filterBy: string, filterValue: string) => void; 
+  onSubmit: (filterBy: string, filterValue: string) => void;
 }
 
 export const FilterForm = ({ onClose, columns, onSubmit }: FilterFormProps) => {
@@ -23,10 +23,10 @@ export const FilterForm = ({ onClose, columns, onSubmit }: FilterFormProps) => {
     onClose();
   };
 
-  const filterableColumns = columns.filter(col => 
+  const filterableColumns = columns.filter(col =>
     !col.cell && !col.sortFn
   );
-  
+
   useState(() => {
       if(filterableColumns.length > 0) {
           setFilterBy(String(filterableColumns[0].accessorKey))
@@ -37,8 +37,8 @@ export const FilterForm = ({ onClose, columns, onSubmit }: FilterFormProps) => {
     <form className={formStyles.form} onSubmit={handleSubmit}>
       <div className={formStyles.formGroup}>
         <label className={formStyles.formLabel}>Choose attribute:</label>
-        <select 
-          className={formStyles.formSelect} 
+        <select
+          className={formStyles.formSelect}
           value={filterBy}
           onChange={(e) => setFilterBy(e.target.value)}
         >
@@ -51,8 +51,8 @@ export const FilterForm = ({ onClose, columns, onSubmit }: FilterFormProps) => {
       </div>
       <div className={formStyles.formGroup}>
         <label className={formStyles.formLabel}>Input filter:</label>
-        <input 
-          className={formStyles.formInput} 
+        <input
+          className={formStyles.formInput}
           type="text"
           value={filterValue}
           onChange={(e) => setFilterValue(e.target.value)}
